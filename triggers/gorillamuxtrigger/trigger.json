@@ -1,7 +1,7 @@
 {
   "name": "tibco-gateway-rest",
   "type": "flogo:trigger",
-  "ref": "github.com/jeffreybozek/mashling-extras/triggers/gorillamuxtrigger",
+  "ref": "github.com/TIBCOSoftware/mashling/ext/flogo/trigger/gorillamuxtrigger",
   "version": "0.0.1",
   "title": "Receive Mashling HTTP Message",
   "author": "Ramesh Polishetti <rpolishe@tibco.com>",
@@ -61,6 +61,10 @@
     {
       "name": "trustStore",
       "type": "string"
+    },
+    {
+      "name": "basicAuthFile",
+      "type": "string"
     }
   ],
   "outputs": [
@@ -90,19 +94,13 @@
       {
         "name": "method",
         "type": "string",
-        "required": true,
-        "allowed": [
-          "GET",
-          "POST",
-          "PUT",
-          "PATCH",
-          "DELETE"
-        ]
+        "required" : true,
+        "allowed" : ["GET", "POST", "PUT", "PATCH", "DELETE"]
       },
       {
         "name": "path",
         "type": "string",
-        "required": true
+        "required" : true
       },
       {
         "name": "autoIdReply",
