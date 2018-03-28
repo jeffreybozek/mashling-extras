@@ -1,7 +1,7 @@
 {
   "name": "tibco-gateway-rest",
   "type": "flogo:trigger",
-  "ref": "github.com/jeffreybozek/mashling-extras/triggers/gorillamuxtrigger",
+  "ref": "github.com/TIBCOSoftware/mashling/ext/flogo/trigger/gorillamuxtrigger",
   "version": "0.0.1",
   "title": "Receive Mashling HTTP Message",
   "author": "Ramesh Polishetti <rpolishe@tibco.com>",
@@ -65,6 +65,34 @@
     {
       "name": "basicAuthFile",
       "type": "string"
+    },
+    {
+      "name": "ldapHost",
+      "type": "string"
+    },
+    {
+      "name": "ldapPort",
+      "type": "string"
+    },
+    {
+      "name": "ldapBase",
+      "type": "string"
+    },
+    {
+      "name": "ldapBindDN",
+      "type": "string"
+    },
+    {
+      "name": "ldapBindPassword",
+      "type": "string"
+    },
+    {
+      "name": "ldapUserFilter",
+      "type": "string"
+    },
+    {
+      "name": "ldapGroupFilter",
+      "type": "string"
     }
   ],
   "outputs": [
@@ -82,7 +110,7 @@
     },
     {
       "name": "content",
-      "type": "object"
+      "type": "any"
     },
     {
       "name": "tracing",
@@ -94,19 +122,13 @@
       {
         "name": "method",
         "type": "string",
-        "required": true,
-        "allowed": [
-          "GET",
-          "POST",
-          "PUT",
-          "PATCH",
-          "DELETE"
-        ]
+        "required" : true,
+        "allowed" : ["GET", "POST", "PUT", "PATCH", "DELETE"]
       },
       {
         "name": "path",
         "type": "string",
-        "required": true
+        "required" : true
       },
       {
         "name": "autoIdReply",
